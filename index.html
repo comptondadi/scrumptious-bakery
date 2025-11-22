@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrumptious Bakery | Fresh & Local</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Scrumptious Bakery 🍪</div>
+        <div class="status">🟢 Open Now</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Fresh from the Oven to Your Doorstep.</h1>
+        <p>The only bakery in the Estate offering daily deliveries.</p>
+        <a href="#menu" class="cta-btn">See Today's Menu</a>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Fresh Batch Today</h2>
+        <div class="filters">
+            <button onclick="filterMenu('all')" class="active">All</button>
+            <button onclick="filterMenu('bread')">Bread</button>
+            <button onclick="filterMenu('cookies')">Cookies</button>
+            <button onclick="filterMenu('pastry')">Pastries</button>
+        </div>
+        
+        <div id="menu-container" class="menu-grid">
+            <!-- Items will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Floating Cart / Order Button -->
+    <div id="floating-cart" class="hidden">
+        <div class="cart-info">
+            <span id="cart-count">0</span> Items | Total: <span id="cart-total">0</span> KES
+        </div>
+        <button onclick="openCheckoutModal()">Order Now <i class="fas fa-whatsapp"></i></button>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Delivery Details</h3>
+            <form id="order-form">
+                <input type="text" id="customer-name" placeholder="Your Name" required>
+                <input type="text" id="customer-address" placeholder="House No / Estate Road" required>
+                <select id="delivery-time">
+                    <option value="ASAP">Deliver Now (ASAP)</option>
+                    <option value="Evening">Evening Run (5 PM)</option>
+                    <option value="Morning">Tomorrow Morning (7 AM)</option>
+                </select>
+                <button type="submit" class="whatsapp-btn">Send Order to WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

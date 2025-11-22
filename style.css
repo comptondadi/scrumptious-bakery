@@ -1,0 +1,115 @@
+:root {
+    --primary: #D2691E; /* Chocolate/Cookie color */
+    --bg: #FFF8E7; /* Creamy background */
+    --text: #333;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding-bottom: 80px; /* Space for floating cart */
+}
+
+nav {
+    background: var(--white);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { font-weight: bold; font-size: 1.2rem; color: var(--primary); }
+.status { font-size: 0.8rem; color: green; background: #e6fffa; padding: 5px 10px; border-radius: 20px; }
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-image: url('assets/bread-bg.jpg'); /* You need a real image here */
+    background-size: cover;
+    background-position: center;
+    color: var(--text); /* Or white if using a dark image overlay */
+}
+
+.cta-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#menu { padding: 20px; }
+.filters { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; }
+.filters button {
+    padding: 8px 15px;
+    border: 1px solid var(--primary);
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.filters button.active { background: var(--primary); color: white; }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.menu-item {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding-bottom: 10px;
+}
+
+.menu-item img { width: 100%; height: 120px; object-fit: cover; }
+.menu-item h4 { margin: 10px; font-size: 1rem; }
+.menu-item p { margin: 0 10px; color: var(--primary); font-weight: bold; }
+.add-btn {
+    width: 90%;
+    margin: 10px 5%;
+    padding: 8px;
+    background: var(--text);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Floating Cart */
+#floating-cart {
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background: var(--text);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.hidden { display: none !important; }
+
+/* Modal */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 200;
+}
+.modal-content { background: white; padding: 20px; border-radius: 10px; width: 80%; }
+input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
+.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; padding: 12px; font-weight: bold; cursor: pointer; }

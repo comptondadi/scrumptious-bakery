@@ -30,9 +30,10 @@ nav {
 
 .hero {
     text-align: center;
-    padding: 80px 20px; /* More vertical space */
-    /* Add a nice bread background */
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+    padding: 100px 20px; /* Increased padding for a bigger, bolder look */
+    
+    /* NEW IMAGE: Woman/Warm Bakery Vibe */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
     background-size: cover;
     background-position: center;
     color: white; /* Text is now white to pop against dark bg */
@@ -146,3 +147,37 @@ nav {
 .modal-content { background: white; padding: 20px; border-radius: 10px; width: 80%; }
 input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
 .whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; padding: 12px; font-weight: bold; cursor: pointer; }
+/* Add animation to the existing class */
+.whatsapp-float {
+    /* Keep your existing styles */
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 150;
+    
+    /* NEW: The Pulse Animation */
+    animation: pulse 2s infinite;
+}
+
+/* Define the Pulse */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}

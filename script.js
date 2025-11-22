@@ -1,10 +1,40 @@
 // 1. The Menu Data (This is what you edit to change products)
 const menuItems = [
-    { id: 1, name: "Ginger Cookies (Pack)", price: 200, category: "cookies", img: "cookie.jpg" },
-    { id: 2, name: "Coconut Drops", price: 150, category: "cookies", img: "coconut.jpg" },
-    { id: 3, name: "Fresh Butter Bread", price: 80, category: "bread", img: "bread.jpg" },
-    { id: 4, name: "Meat Pie", price: 150, category: "pastry", img: "pie.jpg" },
-    { id: 5, name: "Queen Cakes (6pcs)", price: 300, category: "pastry", img: "cake.jpg" }
+    { 
+        id: 1, 
+        name: "Ginger Cookies (Pack)", 
+        price: 200, 
+        category: "cookies", 
+        img: "https://images.unsplash.com/photo-1499636138143-bd649043ea52?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+    },
+    { 
+        id: 2, 
+        name: "Coconut Drops", 
+        price: 150, 
+        category: "cookies", 
+        img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+    },
+    { 
+        id: 3, 
+        name: "Fresh Butter Bread", 
+        price: 80, 
+        category: "bread", 
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+    },
+    { 
+        id: 4, 
+        name: "Meat Pie", 
+        price: 150, 
+        category: "pastry", 
+        img: "https://images.unsplash.com/photo-1572383672419-ab4779963eb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+    },
+    { 
+        id: 5, 
+        name: "Queen Cakes (6pcs)", 
+        price: 300, 
+        category: "pastry", 
+        img: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+    }
 ];
 
 let cart = [];

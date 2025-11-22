@@ -30,23 +30,31 @@ nav {
 
 .hero {
     text-align: center;
-    padding: 40px 20px;
-    background-image: url('assets/bread-bg.jpg'); /* You need a real image here */
+    padding: 80px 20px; /* More vertical space */
+    /* Add a nice bread background */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
     background-size: cover;
     background-position: center;
-    color: var(--text); /* Or white if using a dark image overlay */
+    color: white; /* Text is now white to pop against dark bg */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .cta-btn {
-    background: var(--primary);
-    color: var(--white);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
+    background: #D2691E;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Pill shape looks more modern */
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
 }
-
 #menu { padding: 20px; }
 .filters { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; }
 .filters button {
@@ -65,25 +73,50 @@ nav {
 }
 
 .menu-item {
-    background: var(--white);
-    border-radius: 10px;
+    background: white;
+    border-radius: 15px; /* Softer corners */
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding-bottom: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+    transition: transform 0.2s;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.menu-item img { width: 100%; height: 120px; object-fit: cover; }
-.menu-item h4 { margin: 10px; font-size: 1rem; }
-.menu-item p { margin: 0 10px; color: var(--primary); font-weight: bold; }
+.menu-item:hover {
+    transform: translateY(-5px); /* Lifts up when touched */
+}
+
 .add-btn {
     width: 90%;
-    margin: 10px 5%;
-    padding: 8px;
-    background: var(--text);
+    margin: 10px 5% 15px 5%;
+    padding: 10px;
+    background: #D2691E; /* Brand Color */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px; /* Sits above the checkout bar */
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 150;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
 }
 
 /* Floating Cart */

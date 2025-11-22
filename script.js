@@ -1,4 +1,4 @@
-// 1. The Menu Data (This is what you edit to change products)
+// 1. The Menu Data
 const menuItems = [
     { 
         id: 1, 
@@ -50,7 +50,7 @@ function renderMenu(category = 'all') {
         const div = document.createElement('div');
         div.className = 'menu-item';
         div.innerHTML = `
-            <img src="assets/${item.img}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/150'">
+            <img src="${item.img}" alt="${item.name}">
             <h4>${item.name}</h4>
             <p>KES ${item.price}</p>
             <button class="add-btn" onclick="addToCart(${item.id})">Add +</button>
@@ -98,7 +98,7 @@ function closeModal() {
     document.getElementById('checkout-modal').classList.add('hidden');
 }
 
-// 6. WhatsApp Integration (The MAGIC Part)
+// 6. WhatsApp Integration
 document.getElementById('order-form').addEventListener('submit', function(e) {
     e.preventDefault();
     

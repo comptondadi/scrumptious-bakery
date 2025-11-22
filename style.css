@@ -13,6 +13,7 @@ body {
     padding-bottom: 80px; /* Space for floating cart */
 }
 
+/* Navigation */
 nav {
     background: var(--white);
     padding: 15px;
@@ -28,15 +29,15 @@ nav {
 .logo { font-weight: bold; font-size: 1.2rem; color: var(--primary); }
 .status { font-size: 0.8rem; color: green; background: #e6fffa; padding: 5px 10px; border-radius: 20px; }
 
+/* Hero Section (The "Warm Vibe") */
 .hero {
     text-align: center;
-    padding: 100px 20px; /* Increased padding for a bigger, bolder look */
-    
-    /* NEW IMAGE: Woman/Warm Bakery Vibe */
+    padding: 100px 20px;
+    /* Image: Woman baker/Warm lighting */
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
     background-size: cover;
     background-position: center;
-    color: white; /* Text is now white to pop against dark bg */
+    color: white;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
@@ -52,45 +53,62 @@ nav {
     color: white;
     padding: 12px 30px;
     font-size: 1.1rem;
-    border-radius: 50px; /* Pill shape looks more modern */
+    border-radius: 50px;
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
 }
+
+/* Menu Layout */
 #menu { padding: 20px; }
-.filters { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; }
+.filters { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
 .filters button {
     padding: 8px 15px;
     border: 1px solid var(--primary);
     background: transparent;
     border-radius: 20px;
     cursor: pointer;
+    white-space: nowrap;
 }
 .filters button.active { background: var(--primary); color: white; }
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Slightly wider cards */
     gap: 15px;
 }
 
+/* CARD STYLING (CRITICAL FIXES HERE) */
 .menu-item {
     background: white;
-    border-radius: 15px; /* Softer corners */
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     transition: transform 0.2s;
     border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
 }
 
-.menu-item:hover {
-    transform: translateY(-5px); /* Lifts up when touched */
+/* This was missing! It stops images from breaking the layout */
+.menu-item img {
+    width: 100%;
+    height: 140px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crops image nicely */
 }
+
+.menu-item h4 { margin: 10px; font-size: 1rem; }
+.menu-item p { margin: 0 10px; color: var(--primary); font-weight: bold; }
+
+.menu-item:hover { transform: translateY(-5px); }
 
 .add-btn {
     width: 90%;
     margin: 10px 5% 15px 5%;
     padding: 10px;
-    background: #D2691E; /* Brand Color */
+    background: #D2691E;
     color: white;
     border: none;
     border-radius: 25px;
@@ -98,58 +116,8 @@ nav {
     cursor: pointer;
 }
 
+/* Floating WhatsApp Button (Merged & Animated) */
 .whatsapp-float {
-    position: fixed;
-    bottom: 90px; /* Sits above the checkout bar */
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 150;
-    transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-/* Floating Cart */
-#floating-cart {
-    position: fixed;
-    bottom: 20px;
-    left: 5%;
-    width: 90%;
-    background: var(--text);
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-.hidden { display: none !important; }
-
-/* Modal */
-.modal {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: flex; justify-content: center; align-items: center;
-    z-index: 200;
-}
-.modal-content { background: white; padding: 20px; border-radius: 10px; width: 80%; }
-input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
-.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; padding: 12px; font-weight: bold; cursor: pointer; }
-/* Add animation to the existing class */
-.whatsapp-float {
-    /* Keep your existing styles */
     position: fixed;
     bottom: 90px;
     right: 20px;
@@ -164,20 +132,59 @@ input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #d
     font-size: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     z-index: 150;
+    transition: transform 0.3s;
+    text-decoration: none;
     
-    /* NEW: The Pulse Animation */
+    /* Pulse Animation */
     animation: pulse 2s infinite;
 }
 
-/* Define the Pulse */
+.whatsapp-float:hover { transform: scale(1.1); }
+
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
+
+/* Floating Cart Bar */
+#floating-cart {
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background: var(--text);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 140;
+}
+
+#floating-cart button {
+    background: #25D366;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden { display: none !important; }
+
+/* Checkout Modal */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 200;
+}
+.modal-content { background: white; padding: 25px; border-radius: 10px; width: 85%; max-width: 400px; position: relative; }
+.close { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; }
+
+input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem; }

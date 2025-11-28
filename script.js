@@ -1,11 +1,12 @@
 // 1. The Menu Data
 const menuItems = [
-    { 
-        id: 1, 
+    {
+    id: 1, 
         name: "Ginger Cookies (Pack)", 
         price: 200, 
         category: "cookies", 
-        img: "https://images.unsplash.com/photo-1499636138143-bd649043ea52?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+        /* UPDATED LINK */
+        img: "https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" 
     },
     { 
         id: 2, 

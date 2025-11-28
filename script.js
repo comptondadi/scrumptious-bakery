@@ -5,7 +5,8 @@ const menuItems = [
         name: "Ginger Cookies (Pack)", 
         price: 200, 
         category: "cookies", 
-        img: "https://images.unsplash.com/photo-1499636138143-bd649043ea52?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+        /* UPDATED LINK */
+        img: "https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" 
     },
     { 
         id: 2, 
@@ -26,7 +27,8 @@ const menuItems = [
         name: "Meat Pie", 
         price: 150, 
         category: "pastry", 
-        img: "https://images.unsplash.com/photo-1572383672419-ab4779963eb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+        /* UPDATED LINK */
+        img: "https://images.unsplash.com/photo-1626202158865-06c888d363d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" 
     },
     { 
         id: 5, 
@@ -36,7 +38,6 @@ const menuItems = [
         img: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
     }
 ];
-
 let cart = [];
 
 // 2. Render Menu
